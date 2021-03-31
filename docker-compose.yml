@@ -8,3 +8,15 @@ services:
     ports:
       - "9050:9050"
       - "9051:9051"
+  python:
+    build:
+      context: .
+      dockerfile: python/Dockerfile
+    command: python
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+      - "8888:8888"
+    depends_on:
+      - tor

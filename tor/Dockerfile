@@ -1,7 +1,7 @@
 FROM alpine:latest
 EXPOSE 9051/tcp
 RUN apk update && apk add tor && apk add vim
-COPY /compose/tor/torrc /etc/tor/torrc
+COPY /tor/torrc /etc/tor/torrc
 RUN addgroup -S toranon && adduser -S toranon -G toranon
 RUN chown -R toranon:toranon /etc/tor
 RUN mkdir /run/tor
