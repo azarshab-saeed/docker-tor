@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  tor:
+    build:
+      context: .
+      dockerfile: tor/Dockerfile
+    command: /usr/bin/tor
+    ports:
+      - "9050:9050"
+      - "9051:9051"
