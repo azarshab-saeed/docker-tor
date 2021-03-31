@@ -12,7 +12,7 @@ services:
     build:
       context: .
       dockerfile: python/Dockerfile
-    command: python
+    command: python /code/script.py
     volumes:
       - .:/code
     ports:
