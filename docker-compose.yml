@@ -12,11 +12,9 @@ services:
     build:
       context: .
       dockerfile: python/Dockerfile
-    command: python /code/script.py
-    volumes:
-      - .:/code
+    command: python flask-server.py
     ports:
-      - "8000:8000"
+      - "5000:5000"
       - "8888:8888"
     depends_on:
       - tor
